@@ -1,4 +1,5 @@
-obj-m += pid_module.o
+obj-m += list_kernel_threads.o
+# obj-m +=  print_family_info.o
 all:
     make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 clean:
