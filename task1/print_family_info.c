@@ -11,7 +11,7 @@ static int pid_target = 0;  // 默认值为0，后面通过模块参数传入PID
 module_param(pid_target, int, S_IRUGO);  // 模块参数，接受PID
 
 static void print_process_info(struct task_struct *task) {
-    printk(KERN_INFO "Name: %s, PID: %d, State: %ld\n", task->comm, task->pid, task->state);
+    printk(KERN_INFO "Name: %s, PID: %d, State: %ld\n", task->comm, task->pid, task->stats);
 }
 
 static int __init print_family_info_init(void) {
@@ -36,7 +36,7 @@ static int __init print_family_info_init(void) {
         return -ESRCH;
     }
 
-    printk(KERN_INFO "Found process with PID %d: %s\n", pid_to_lookup, task->comm);
+    printk(KERN_INFO "Found process with PID %d: %s\n", d_in_lookup, task->comm);
 
     // 输出父进程信息
     parent_task = task->real_parent;
