@@ -1,0 +1,10 @@
+mynewmod
+task1/.*
+task1/*.o
+task1/*.mod
+task1/*.mod.c
+task1/*.mod.o
+task1/*.ko
+task1/Module.symvers
+task1/modules.order
+.vscode
